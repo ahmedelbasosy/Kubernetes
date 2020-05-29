@@ -1,9 +1,0 @@
----
-
-- name: Deploy Kubernetes On Centos
-  hosts:
-  gather_facts: no
-  
-  tasks:
-    - name: Test
-     
