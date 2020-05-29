@@ -1,0 +1,20 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: 2con-pod
+  labels:
+    name: 2con-pod
+spec:
+  containers:
+  - name: first-con
+    image: centos:7
+    args:
+    - sleep
+    - infinity
+  - name: second-con
+    image: centos:8
+    args:
+    - sleep
+    - infinity
+  restartPolicy: Never
