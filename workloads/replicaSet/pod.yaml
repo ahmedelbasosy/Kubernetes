@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx
+  labels:
+    app: guestbook
+spec:
+  containers:
+  - name: nginx
+    image: nginx
+    command: ['sleep', '3600']

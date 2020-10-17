@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: frontend
+  labels:
+    app: guestbook
+    tier: frontend
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      tier: frontend
+      app: guestbook
+  template:
+    metadata:
+      labels:
+        tier: frontend
+        app: guestbook
+    spec:
+      containers:
+      - name: nginx
+        image: nginx
+        command: ['sleep', '3600']
