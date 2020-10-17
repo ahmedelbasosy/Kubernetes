@@ -31,3 +31,4 @@ spec:
   securityContext:
     runAsUser: 2000
   restartPolicy: Never
+
