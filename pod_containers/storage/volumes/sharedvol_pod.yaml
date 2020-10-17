@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: sharedvol
+  labels:
+    app: nginx
+spec:
+  containers:
+  - name: con1
+    image: nginx
+    command:
+      - sleep
+      - "3600"
+    volumeMounts:
+    - name: sharedvol
+      mountPath: /con1
+  - name: con2
+    image: nginx
+    command:
+      - sleep
+      - "3600"
+    volumeMounts:
+    - name: sharedvol
+      mountPath: /con2
+  volumes:
+  - name: sharedvol
+    emptyDir: {}

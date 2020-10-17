@@ -1,0 +1,22 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: emptydir
+  labels:
+    app: test
+    env: dev
+spec:
+  containers:
+  - name: emptydir
+    image: nginx
+    command:
+      - sleep
+      - "3600"
+    volumeMounts:
+    - name: cache-dir
+      mountPath: /cache
+  volumes:
+  - name: cache-dir
+    emptyDir: {}
+
