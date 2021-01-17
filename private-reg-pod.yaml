@@ -5,7 +5,7 @@ metadata:
 spec:
   containers:
   - name: private-reg-container
-    image: ahmedhelbasosy/jenktestbuild
+    image: docker.io/ahmedhelbasosy/jenktestbuild
   imagePullSecrets:
   - name: regcred
 
