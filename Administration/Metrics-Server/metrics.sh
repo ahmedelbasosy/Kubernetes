@@ -11,3 +11,8 @@ echo "
         - --kubelet-insecure-tls
         - --kubelet-preferred-address-types=InternalIP
      "
+
+echo "### Add the Following to apiserver Parameters: ###"
+echo "
+        - --enable-aggregator-routing=true
+     "

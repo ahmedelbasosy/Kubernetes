@@ -1,0 +1,11 @@
+#!/bin/bash
+alias k='kubectl'
+alias kgp='kubectl get pods'
+alias kgs='kubectl get service'
+alias kd='kubectl delete'
+alias kcf="kubectl create -f"
+alias kaf="kubectl apply -f"
+alias kgpa="kubectl get pods --all-namespaces"
+alias kgpns="kubectl get pods --namespace"
+alias kgans="kubectl get all --namespace"
+
