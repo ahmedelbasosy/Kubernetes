@@ -10,11 +10,11 @@ spec:
     - name: docker-lib
       mountPath: /var/lib/docker
       readOnly: true 					# ReadOnly 
-    tolerations:
-    - effect: NoSchedule
-      key: node-role.kubernetes.io/master
-    nodeSelector:
-      node-role.kubernetes.io/master: ""
+  tolerations:
+  - effect: NoSchedule
+    key: node-role.kubernetes.io/master
+  nodeSelector:
+    node-role.kubernetes.io/master: ""
   volumes:
   - name: docker-lib
     hostPath:

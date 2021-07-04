@@ -9,15 +9,15 @@ spec:
     resources:
       requests:
         memory: 100Mi
-	cpu: 50m
+        cpu: 50m
     volumeMounts:
     - name: empty-dir
       mountPath: /tmp/test
-    tolerations:
-    - effect: NoSchedule
-      key: node-role.kubernetes.io/master
-    nodeSelector:
-      node-role.kubernetes.io/master: ""
+  tolerations:
+  - effect: NoSchedule
+    key: node-role.kubernetes.io/master
+  nodeSelector:
+    node-role.kubernetes.io/master: ""
   volumes:
   - name: empty-dir
     emptyDir: {}
