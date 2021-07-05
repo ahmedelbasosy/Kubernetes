@@ -1,0 +1,27 @@
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: simple-pv
+  labels:
+    tybe: local
+spec:
+  capacity:
+    storage: 10Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: "/tmp"
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: simple-pvc-1
+spec:
+  storageClassName: ""                          # To Match with PV that has no StorageClass
+  volumeName: simple-pv                         # To Bind With PV Name
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: 13Gi

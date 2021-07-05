@@ -1,0 +1,24 @@
+---
+apiVersion: v1
+data:
+  password: tabahy1
+  username: mohamed
+kind: ConfigMap
+metadata:
+  name: myconfig-map
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: simple-pod-with-configmap-volume
+spec:
+  containers:
+  - name: con-with-configmap-volume
+    image: nginx
+    volumeMounts:
+    - name: configmap-volume
+      mountPath: /tmp/configmap
+  volumes:
+  - name: configmap-volume
+    configMap:
+      name: myconfig-map

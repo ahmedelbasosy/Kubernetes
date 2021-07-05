@@ -1,0 +1,28 @@
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: simple-pv
+  labels:
+    tybe: local
+spec:
+  persistentVolumeReclaimPolicy: Delete
+  storageClassName: local
+  capacity:
+    storage: 10Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: "/tmp/simple-pv"
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: simple-pvc-1
+spec:
+  storageClassName: local
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
