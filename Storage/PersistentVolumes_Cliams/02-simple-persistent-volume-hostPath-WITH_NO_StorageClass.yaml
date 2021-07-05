@@ -12,6 +12,7 @@ spec:
     - ReadWriteOnce
   hostPath:
     path: "/tmp"
+# No StorageClass Defined 
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
