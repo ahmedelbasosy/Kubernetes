@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: pod-with-env-fieldref
+  name: pod-with-env-fieldref
+spec:
+  containers:
+  - env:
+    - name: hostingNode
+      valueFrom:
+        fieldRef:
+          fieldPath: spec.nodeName
+    image: nginx
+    name: pod-with-env-fieldref
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+

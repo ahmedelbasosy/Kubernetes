@@ -1,0 +1,32 @@
+---
+apiVersion: v1
+data:
+  k8-password: Welcome2
+  k8-username: basbosa
+kind: ConfigMap
+metadata:
+  creationTimestamp: null
+  name: env-configmap
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: pod-with-env-configmapkeyref
+  name: pod-with-env-configmapkeyref
+spec:
+  containers:
+  - env:
+    - name: K8_USERNAME
+      valueFrom:
+        configMapKeyRef:
+          name: env-configmap
+          key: k8-username
+    - name: K8_PASSWORD
+      valueFrom:
+        configMapKeyRef:
+          name: env-configmap
+          key: k8-password
+    image: nginx
+    name: pod-with-env-configmapkeyref
+      

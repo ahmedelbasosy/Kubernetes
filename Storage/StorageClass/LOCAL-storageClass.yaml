@@ -4,3 +4,6 @@ metadata:
   name: local-storage
 provisioner: kubernetes.io/no-provisioner
 volumeBindingMode: WaitForFirstConsumer # to delay volume binding until Pod scheduling.
+parameters:
+  archiveOnDelete: "true"
+
